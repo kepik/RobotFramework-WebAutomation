@@ -1,0 +1,889 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.1 on darwin)" generated="2024-01-24T20:26:30.641567" rpa="false" schemaversion="5">
+<suite id="s1" name="AddDeleteProductTests &amp; ConfirmOrderTests &amp; LoginTests">
+<suite id="s1-s1" name="AddDeleteProductTests" source="/Users/azriani/PycharmProjects/testRobotProject/Tests/AddDeleteProductTests.robot">
+<test id="s1-s1-t1" name="Add Phone Product to Cart" line="14">
+<kw name="Open-Homepage" owner="CommonFunc" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:30.703074" level="INFO">Opening browser 'chrome' to base url 'https://www.demoblaze.com/'.</msg>
+<arg>https://www.demoblaze.com/</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-01-24T20:26:30.702931" elapsed="1.894273"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-01-24T20:26:32.597574" elapsed="0.454350"/>
+</kw>
+<status status="PASS" start="2024-01-24T20:26:30.702027" elapsed="2.350024"/>
+</kw>
+<kw name="Login-User" owner="LoginValidUser">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:33.052843" level="INFO">Clicking element '//a[@id='login2']'.</msg>
+<arg>${LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:26:33.052553" elapsed="0.043705"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGIN-USER}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-24T20:26:33.096374" elapsed="0.226095"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:33.322725" level="INFO">Typing text 'Mochi' into text field 'css:input#loginusername'.</msg>
+<arg>${LOGIN-USER}</arg>
+<arg>${LOGIN-VALID}[username]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:26:33.322579" elapsed="0.098334"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:33.421222" level="INFO">Typing password into text field 'css:input#loginpassword'.</msg>
+<msg time="2024-01-24T20:26:33.440714" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${LOGIN-PASSWD}</arg>
+<arg>${LOGIN-VALID}[password]</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:26:33.421030" elapsed="0.041047"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:33.462296" level="INFO">Clicking element '//button[normalize-space()='Log in']'.</msg>
+<arg>${LOGIN-BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:26:33.462186" elapsed="0.028780"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CONFIRM-LOGIN}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-24T20:26:33.491077" elapsed="1.562904"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:35.070097" level="INFO">Element 'id=nameofuser' contains text 'Welcome'.</msg>
+<arg>${CONFIRM-LOGIN}</arg>
+<arg>Welcome</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2024-01-24T20:26:35.054263" elapsed="0.015905"/>
+</kw>
+<status status="PASS" start="2024-01-24T20:26:33.052329" elapsed="2.017937"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:35.070588" level="INFO">Clicking link 'link:Phones'.</msg>
+<arg>link:Phones</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:26:35.070460" elapsed="0.037195"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-01-24T20:26:37.108527" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-01-24T20:26:35.107816" elapsed="2.001208"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:37.111025" level="INFO">Clicking link 'link:Sony xperia z5'.</msg>
+<arg>${PHONE-PRODUCT}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:26:37.110160" elapsed="0.631269"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ADD-TO-CART}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-24T20:26:37.741795" elapsed="0.674317"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:38.416594" level="INFO">Clicking element '//a[@class='btn btn-success btn-lg']'.</msg>
+<arg>${ADD-TO-CART}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:26:38.416377" elapsed="0.030770"/>
+</kw>
+<kw name="Alert Should Be Present" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:38.447434" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>Product added.</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<status status="PASS" start="2024-01-24T20:26:38.447320" elapsed="1.021566"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:39.469624" level="INFO">Clicking link 'link:Cart'.</msg>
+<arg>link:Cart</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:26:39.469307" elapsed="0.618344"/>
+</kw>
+<tag>positiveCases</tag>
+<status status="PASS" start="2024-01-24T20:26:30.701769" elapsed="9.386096"/>
+</test>
+<test id="s1-s1-t2" name="Add Laptop Product to Cart" line="26">
+<kw name="Open-Homepage" owner="CommonFunc" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:40.089244" level="INFO">Opening browser 'chrome' to base url 'https://www.demoblaze.com/'.</msg>
+<arg>https://www.demoblaze.com/</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-01-24T20:26:40.089081" elapsed="2.125947"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-01-24T20:26:42.215317" elapsed="0.462448"/>
+</kw>
+<status status="PASS" start="2024-01-24T20:26:40.088592" elapsed="2.589267"/>
+</kw>
+<kw name="Login-User" owner="LoginValidUser">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:42.678389" level="INFO">Clicking element '//a[@id='login2']'.</msg>
+<arg>${LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:26:42.678260" elapsed="0.044902"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGIN-USER}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-24T20:26:42.723383" elapsed="0.228599"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:42.952271" level="INFO">Typing text 'Mochi' into text field 'css:input#loginusername'.</msg>
+<arg>${LOGIN-USER}</arg>
+<arg>${LOGIN-VALID}[username]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:26:42.952107" elapsed="0.125653"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:43.078057" level="INFO">Typing password into text field 'css:input#loginpassword'.</msg>
+<msg time="2024-01-24T20:26:43.095661" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${LOGIN-PASSWD}</arg>
+<arg>${LOGIN-VALID}[password]</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:26:43.077884" elapsed="0.041812"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:43.119930" level="INFO">Clicking element '//button[normalize-space()='Log in']'.</msg>
+<arg>${LOGIN-BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:26:43.119808" elapsed="0.024342"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CONFIRM-LOGIN}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-24T20:26:43.144265" elapsed="1.582707"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:44.743339" level="INFO">Element 'id=nameofuser' contains text 'Welcome'.</msg>
+<arg>${CONFIRM-LOGIN}</arg>
+<arg>Welcome</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2024-01-24T20:26:44.727268" elapsed="0.016141"/>
+</kw>
+<status status="PASS" start="2024-01-24T20:26:42.678082" elapsed="2.065410"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:44.743815" level="INFO">Clicking link 'link:Laptops'.</msg>
+<arg>link:Laptops</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:26:44.743681" elapsed="0.045019"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-01-24T20:26:46.790136" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-01-24T20:26:44.788938" elapsed="2.001739"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:46.792721" level="INFO">Clicking link 'link:MacBook Pro'.</msg>
+<arg>${LAPTOP-PRODUCT}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:26:46.791881" elapsed="1.148252"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ADD-TO-CART}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-24T20:26:47.940558" elapsed="1.310287"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:49.251182" level="INFO">Clicking element '//a[@class='btn btn-success btn-lg']'.</msg>
+<arg>${ADD-TO-CART}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:26:49.251013" elapsed="0.029654"/>
+</kw>
+<kw name="Alert Should Be Present" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:49.280923" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>Product added.</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<status status="PASS" start="2024-01-24T20:26:49.280820" elapsed="1.544020"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:50.825246" level="INFO">Clicking link 'link:Cart'.</msg>
+<arg>link:Cart</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:26:50.825091" elapsed="0.670054"/>
+</kw>
+<tag>positiveCases</tag>
+<status status="PASS" start="2024-01-24T20:26:40.088177" elapsed="11.407177"/>
+</test>
+<test id="s1-s1-t3" name="Add Monitor Product to Cart" line="38">
+<kw name="Open-Homepage" owner="CommonFunc" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:51.496103" level="INFO">Opening browser 'chrome' to base url 'https://www.demoblaze.com/'.</msg>
+<arg>https://www.demoblaze.com/</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-01-24T20:26:51.495982" elapsed="2.146699"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-01-24T20:26:53.642998" elapsed="0.500106"/>
+</kw>
+<status status="PASS" start="2024-01-24T20:26:51.495801" elapsed="2.647418"/>
+</kw>
+<kw name="Login-User" owner="LoginValidUser">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:54.143891" level="INFO">Clicking element '//a[@id='login2']'.</msg>
+<arg>${LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:26:54.143731" elapsed="0.036249"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGIN-USER}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-24T20:26:54.180096" elapsed="0.227647"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:54.407992" level="INFO">Typing text 'Mochi' into text field 'css:input#loginusername'.</msg>
+<arg>${LOGIN-USER}</arg>
+<arg>${LOGIN-VALID}[username]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:26:54.407852" elapsed="0.100986"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:54.509100" level="INFO">Typing password into text field 'css:input#loginpassword'.</msg>
+<msg time="2024-01-24T20:26:54.526724" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${LOGIN-PASSWD}</arg>
+<arg>${LOGIN-VALID}[password]</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:26:54.508954" elapsed="0.045428"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:54.554598" level="INFO">Clicking element '//button[normalize-space()='Log in']'.</msg>
+<arg>${LOGIN-BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:26:54.554491" elapsed="0.024232"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CONFIRM-LOGIN}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-24T20:26:54.578842" elapsed="2.462402"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:57.050963" level="INFO">Element 'id=nameofuser' contains text 'Welcome'.</msg>
+<arg>${CONFIRM-LOGIN}</arg>
+<arg>Welcome</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2024-01-24T20:26:57.041367" elapsed="0.009646"/>
+</kw>
+<status status="PASS" start="2024-01-24T20:26:54.143508" elapsed="2.907560"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:57.051281" level="INFO">Clicking link 'link:Monitors'.</msg>
+<arg>link:Monitors</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:26:57.051182" elapsed="0.027341"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-01-24T20:26:59.080156" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-01-24T20:26:57.078711" elapsed="2.001972"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:26:59.082710" level="INFO">Clicking link 'link:Apple monitor 24'.</msg>
+<arg>${MONITOR-PRODUCT}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:26:59.081697" elapsed="0.828648"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ADD-TO-CART}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-24T20:26:59.910718" elapsed="0.682542"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:00.593852" level="INFO">Clicking element '//a[@class='btn btn-success btn-lg']'.</msg>
+<arg>${ADD-TO-CART}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:00.593575" elapsed="0.035324"/>
+</kw>
+<kw name="Alert Should Be Present" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:00.629240" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>Product added.</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<status status="PASS" start="2024-01-24T20:27:00.629120" elapsed="1.041252"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:01.670929" level="INFO">Clicking link 'link:Cart'.</msg>
+<arg>link:Cart</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:01.670823" elapsed="1.765179"/>
+</kw>
+<tag>positiveCases</tag>
+<status status="PASS" start="2024-01-24T20:26:51.495560" elapsed="11.940699"/>
+</test>
+<status status="PASS" start="2024-01-24T20:26:30.648557" elapsed="32.788255"/>
+</suite>
+<suite id="s1-s2" name="ConfirmOrderTests" source="/Users/azriani/PycharmProjects/testRobotProject/Tests/ConfirmOrderTests.robot">
+<test id="s1-s2-t1" name="Add Product and Confirm Order" line="11">
+<kw name="Open-Homepage" owner="CommonFunc" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:03.441931" level="INFO">Opening browser 'chrome' to base url 'https://www.demoblaze.com/'.</msg>
+<arg>https://www.demoblaze.com/</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-01-24T20:27:03.441778" elapsed="2.506563"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-01-24T20:27:05.948654" elapsed="0.514908"/>
+</kw>
+<status status="PASS" start="2024-01-24T20:27:03.441557" elapsed="3.022098"/>
+</kw>
+<kw name="Login-User" owner="LoginValidUser">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:06.464183" level="INFO">Clicking element '//a[@id='login2']'.</msg>
+<arg>${LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:06.464055" elapsed="0.037484"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGIN-USER}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-24T20:27:06.501654" elapsed="0.232002"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:06.733926" level="INFO">Typing text 'Mochi' into text field 'css:input#loginusername'.</msg>
+<arg>${LOGIN-USER}</arg>
+<arg>${LOGIN-VALID}[username]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:06.733783" elapsed="0.103249"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:06.837291" level="INFO">Typing password into text field 'css:input#loginpassword'.</msg>
+<msg time="2024-01-24T20:27:06.860139" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${LOGIN-PASSWD}</arg>
+<arg>${LOGIN-VALID}[password]</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:06.837150" elapsed="0.044097"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:06.881537" level="INFO">Clicking element '//button[normalize-space()='Log in']'.</msg>
+<arg>${LOGIN-BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:06.881391" elapsed="0.022908"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CONFIRM-LOGIN}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-24T20:27:06.904417" elapsed="2.305683"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:09.221705" level="INFO">Element 'id=nameofuser' contains text 'Welcome'.</msg>
+<arg>${CONFIRM-LOGIN}</arg>
+<arg>Welcome</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2024-01-24T20:27:09.210240" elapsed="0.011518"/>
+</kw>
+<status status="PASS" start="2024-01-24T20:27:06.463875" elapsed="2.757941"/>
+</kw>
+<kw name="Add-Product" owner="LoginValidUser">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:09.222214" level="INFO">Clicking link 'link:Laptops'.</msg>
+<arg>link:Laptops</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:09.222128" elapsed="0.032126"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-01-24T20:27:11.256761" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-01-24T20:27:09.254375" elapsed="2.002585"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:11.257611" level="INFO">Clicking link 'MacBook Pro'.</msg>
+<arg>MacBook Pro</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:11.257292" elapsed="1.302073"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ADD-TO-CART}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-24T20:27:12.559647" elapsed="1.320161"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:13.880086" level="INFO">Clicking element '//a[@class='btn btn-success btn-lg']'.</msg>
+<arg>${ADD-TO-CART}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:13.879941" elapsed="0.025764"/>
+</kw>
+<kw name="Alert Should Be Present" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:13.906040" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>Product added.</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<status status="PASS" start="2024-01-24T20:27:13.905833" elapsed="1.525003"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:15.431406" level="INFO">Clicking link 'link:Cart'.</msg>
+<arg>link:Cart</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:15.431128" elapsed="1.202279"/>
+</kw>
+<status status="PASS" start="2024-01-24T20:27:09.221978" elapsed="7.411584"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:16.634140" level="INFO">Clicking element 'css:[data-target='#orderModal']'.</msg>
+<arg>${PLACE-ORDER}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:16.633848" elapsed="0.036514"/>
+</kw>
+<kw name="Input-User-Data" owner="LoginValidUser">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${DATA-NAME}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-24T20:27:16.670724" elapsed="0.223369"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:16.894441" level="INFO">Typing text 'User fullname AND' into text field '//input[@id='name']'.</msg>
+<arg>${DATA-NAME}</arg>
+<arg>${USER-DATA}[name]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:16.894221" elapsed="0.039198"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:16.933667" level="INFO">Typing text 'country name AND' into text field '//input[@id='country']'.</msg>
+<arg>${DATA-COUNTRY}</arg>
+<arg>${USER-DATA}[country]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:16.933528" elapsed="0.067735"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:17.001519" level="INFO">Typing text 'city name AND' into text field '//input[@id='city']'.</msg>
+<arg>${DATA-CITY}</arg>
+<arg>${USER-DATA}[city]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:17.001375" elapsed="0.040122"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:17.041828" level="INFO">Typing text '12378438579844 AND' into text field '//input[@id='card']'.</msg>
+<arg>${DATA-CARD}</arg>
+<arg>${USER-DATA}[card]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:17.041623" elapsed="0.043036"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:17.084975" level="INFO">Typing text '10 AND' into text field '//input[@id='month']'.</msg>
+<arg>${DATA-MONTH}</arg>
+<arg>${USER-DATA}[month]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:17.084775" elapsed="0.044364"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:17.129406" level="INFO">Typing text '2029 AND' into text field '//input[@id='year']'.</msg>
+<arg>${DATA-YEAR}</arg>
+<arg>${USER-DATA}[year]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:17.129259" elapsed="0.040247"/>
+</kw>
+<status status="PASS" start="2024-01-24T20:27:16.670559" elapsed="0.499018"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:17.169826" level="INFO">Clicking element 'css:[onclick='purchaseOrder()']'.</msg>
+<arg>${PURCHASE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:17.169692" elapsed="0.024215"/>
+</kw>
+<tag>positiveCases</tag>
+<status status="PASS" start="2024-01-24T20:27:03.441260" elapsed="13.752790"/>
+</test>
+<test id="s1-s2-t2" name="Purchase with Empty Data" line="20">
+<kw name="Open-Homepage" owner="CommonFunc" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:17.194706" level="INFO">Opening browser 'chrome' to base url 'https://www.demoblaze.com/'.</msg>
+<arg>https://www.demoblaze.com/</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-01-24T20:27:17.194567" elapsed="2.225349"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-01-24T20:27:19.420231" elapsed="0.456468"/>
+</kw>
+<status status="PASS" start="2024-01-24T20:27:17.194416" elapsed="2.682389"/>
+</kw>
+<kw name="Login-User" owner="LoginValidUser">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:19.877404" level="INFO">Clicking element '//a[@id='login2']'.</msg>
+<arg>${LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:19.877247" elapsed="0.037270"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGIN-USER}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-24T20:27:19.914631" elapsed="0.227463"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:20.142751" level="INFO">Typing text 'Mochi' into text field 'css:input#loginusername'.</msg>
+<arg>${LOGIN-USER}</arg>
+<arg>${LOGIN-VALID}[username]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:20.142416" elapsed="0.102713"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:20.245408" level="INFO">Typing password into text field 'css:input#loginpassword'.</msg>
+<msg time="2024-01-24T20:27:20.261340" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${LOGIN-PASSWD}</arg>
+<arg>${LOGIN-VALID}[password]</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:20.245263" elapsed="0.039594"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:20.285098" level="INFO">Clicking element '//button[normalize-space()='Log in']'.</msg>
+<arg>${LOGIN-BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:20.284983" elapsed="0.023619"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:21.703487" level="INFO">Suppressing StaleElementReferenceException from Selenium.</msg>
+<arg>${CONFIRM-LOGIN}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-24T20:27:20.308723" elapsed="2.254823"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:22.574278" level="INFO">Element 'id=nameofuser' contains text 'Welcome'.</msg>
+<arg>${CONFIRM-LOGIN}</arg>
+<arg>Welcome</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2024-01-24T20:27:22.563690" elapsed="0.010633"/>
+</kw>
+<status status="PASS" start="2024-01-24T20:27:19.877044" elapsed="2.697331"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:22.574568" level="INFO">Clicking link 'link:Cart'.</msg>
+<arg>link:Cart</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:22.574483" elapsed="1.417539"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PLACE-ORDER}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-24T20:27:23.992222" elapsed="0.022801"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:24.015323" level="INFO">Clicking element 'css:[data-target='#orderModal']'.</msg>
+<arg>${PLACE-ORDER}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:24.015186" elapsed="0.023082"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PURCHASE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-24T20:27:24.038426" elapsed="0.222910"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:24.261656" level="INFO">Clicking element 'css:[onclick='purchaseOrder()']'.</msg>
+<arg>${PURCHASE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:24.261507" elapsed="0.048074"/>
+</kw>
+<kw name="Alert Should Be Present" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:24.309841" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>Please fill out Name and Creditcard.</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<status status="PASS" start="2024-01-24T20:27:24.309740" elapsed="0.002423"/>
+</kw>
+<tag>negativeCases</tag>
+<status status="PASS" start="2024-01-24T20:27:17.194214" elapsed="7.118133"/>
+</test>
+<status status="PASS" start="2024-01-24T20:27:03.437329" elapsed="20.875256"/>
+</suite>
+<suite id="s1-s3" name="LoginTests" source="/Users/azriani/PycharmProjects/testRobotProject/Tests/LoginTests.robot">
+<test id="s1-s3-t1" name="Valid Login" line="16">
+<kw name="Open-Homepage" owner="CommonFunc" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:24.316232" level="INFO">Opening browser 'chrome' to base url 'https://www.demoblaze.com/'.</msg>
+<arg>https://www.demoblaze.com/</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-01-24T20:27:24.316133" elapsed="4.390839"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-01-24T20:27:28.707245" elapsed="0.462962"/>
+</kw>
+<status status="PASS" start="2024-01-24T20:27:24.315994" elapsed="4.854326"/>
+</kw>
+<kw name="Login-User" owner="LoginValidUser">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:29.170854" level="INFO">Clicking element '//a[@id='login2']'.</msg>
+<arg>${LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:29.170720" elapsed="0.028605"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGIN-USER}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-24T20:27:29.199470" elapsed="0.225137"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:29.424863" level="INFO">Typing text 'Mochi' into text field 'css:input#loginusername'.</msg>
+<arg>${LOGIN-USER}</arg>
+<arg>${LOGIN-VALID}[username]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:29.424714" elapsed="0.116901"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:29.541887" level="INFO">Typing password into text field 'css:input#loginpassword'.</msg>
+<msg time="2024-01-24T20:27:29.557862" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${LOGIN-PASSWD}</arg>
+<arg>${LOGIN-VALID}[password]</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:29.541729" elapsed="0.040938"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:29.582894" level="INFO">Clicking element '//button[normalize-space()='Log in']'.</msg>
+<arg>${LOGIN-BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:29.582782" elapsed="0.023361"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CONFIRM-LOGIN}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-24T20:27:29.606255" elapsed="3.988909"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:33.611764" level="INFO">Element 'id=nameofuser' contains text 'Welcome'.</msg>
+<arg>${CONFIRM-LOGIN}</arg>
+<arg>Welcome</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2024-01-24T20:27:33.595463" elapsed="0.016372"/>
+</kw>
+<status status="PASS" start="2024-01-24T20:27:29.170545" elapsed="4.441372"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:33.612252" level="INFO">Clicking element '//a[@id='logout2']'.</msg>
+<arg>${LOGOUT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:33.612091" elapsed="1.189025"/>
+</kw>
+<tag>positiveCases</tag>
+<status status="PASS" start="2024-01-24T20:27:24.315820" elapsed="10.485466"/>
+</test>
+<test id="s1-s3-t2" name="Unregistered User Login" line="22">
+<kw name="Open-Homepage" owner="CommonFunc" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:34.802139" level="INFO">Opening browser 'chrome' to base url 'https://www.demoblaze.com/'.</msg>
+<arg>https://www.demoblaze.com/</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-01-24T20:27:34.802016" elapsed="5.280408"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-01-24T20:27:40.082696" elapsed="0.454783"/>
+</kw>
+<status status="PASS" start="2024-01-24T20:27:34.801829" elapsed="5.735751"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:40.537976" level="INFO">Clicking element '//a[@id='login2']'.</msg>
+<arg>${LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:40.537781" elapsed="0.029472"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGIN-USER}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-24T20:27:40.567402" elapsed="0.230427"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:40.798214" level="INFO">Typing text 'HahaHehe' into text field 'css:input#loginusername'.</msg>
+<arg>${LOGIN-USER}</arg>
+<arg>${LOGIN-INVALID}[username]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:40.798047" elapsed="0.101334"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:40.899682" level="INFO">Typing password into text field 'css:input#loginpassword'.</msg>
+<msg time="2024-01-24T20:27:40.918608" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${LOGIN-PASSWD}</arg>
+<arg>${LOGIN-INVALID}[password]</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:40.899536" elapsed="0.051621"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:40.951506" level="INFO">Clicking element '//button[normalize-space()='Log in']'.</msg>
+<arg>${LOGIN-BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:40.951378" elapsed="0.023120"/>
+</kw>
+<kw name="Alert Should Be Present" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:40.974961" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>User does not exist.</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<status status="PASS" start="2024-01-24T20:27:40.974840" elapsed="1.513772"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:42.489342" level="INFO">Clicking element '//div[@id='logInModal']//button[@type='button'][normalize-space()='Close']'.</msg>
+<arg>${CLOSE-LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:42.488993" elapsed="0.034440"/>
+</kw>
+<tag>negativeCases</tag>
+<status status="PASS" start="2024-01-24T20:27:34.801512" elapsed="7.722108"/>
+</test>
+<test id="s1-s3-t3" name="Wrong Password Login" line="34">
+<kw name="Open-Homepage" owner="CommonFunc" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:42.524360" level="INFO">Opening browser 'chrome' to base url 'https://www.demoblaze.com/'.</msg>
+<arg>https://www.demoblaze.com/</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-01-24T20:27:42.524244" elapsed="7.295255"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-01-24T20:27:49.819833" elapsed="0.450296"/>
+</kw>
+<status status="PASS" start="2024-01-24T20:27:42.524068" elapsed="7.746167"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:50.270598" level="INFO">Clicking element '//a[@id='login2']'.</msg>
+<arg>${LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:50.270412" elapsed="0.040116"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGIN-USER}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-24T20:27:50.310675" elapsed="0.225536"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:50.536535" level="INFO">Typing text 'Mochi' into text field 'css:input#loginusername'.</msg>
+<arg>${LOGIN-USER}</arg>
+<arg>${LOGIN-VALID}[username]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:50.536367" elapsed="0.100864"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:50.637537" level="INFO">Typing password into text field 'css:input#loginpassword'.</msg>
+<msg time="2024-01-24T20:27:50.655001" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${LOGIN-PASSWD}</arg>
+<arg>${LOGIN-INVALID}[password]</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:50.637390" elapsed="0.043190"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:50.681807" level="INFO">Clicking element '//button[normalize-space()='Log in']'.</msg>
+<arg>${LOGIN-BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:50.680734" elapsed="0.033218"/>
+</kw>
+<kw name="Alert Should Be Present" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:50.714232" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>Wrong password.</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<status status="PASS" start="2024-01-24T20:27:50.714108" elapsed="1.012803"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:51.727278" level="INFO">Clicking element '//div[@id='logInModal']//button[@type='button'][normalize-space()='Close']'.</msg>
+<arg>${CLOSE-LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:27:51.727114" elapsed="0.031921"/>
+</kw>
+<tag>negativeCases</tag>
+<status status="PASS" start="2024-01-24T20:27:42.523818" elapsed="9.235357"/>
+</test>
+<test id="s1-s3-t4" name="Empty User Login" line="45">
+<kw name="Open-Homepage" owner="CommonFunc" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:27:51.759793" level="INFO">Opening browser 'chrome' to base url 'https://www.demoblaze.com/'.</msg>
+<arg>https://www.demoblaze.com/</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-01-24T20:27:51.759689" elapsed="9.281719"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-01-24T20:28:01.042049" elapsed="0.495146"/>
+</kw>
+<status status="PASS" start="2024-01-24T20:27:51.759531" elapsed="9.777767"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:28:01.537714" level="INFO">Clicking element '//a[@id='login2']'.</msg>
+<arg>${LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:28:01.537495" elapsed="0.041337"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGIN-USER}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-24T20:28:01.579021" elapsed="0.226514"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-01-24T20:28:02.807247" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-01-24T20:28:01.805691" elapsed="1.001733"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:28:02.808062" level="INFO">Clicking element '//button[normalize-space()='Log in']'.</msg>
+<arg>${LOGIN-BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:28:02.807758" elapsed="0.048608"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-01-24T20:28:03.857503" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-01-24T20:28:02.856737" elapsed="1.000983"/>
+</kw>
+<kw name="Alert Should Be Present" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:28:03.858495" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>Please fill out Username and Password.</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<status status="PASS" start="2024-01-24T20:28:03.858191" elapsed="0.004934"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-24T20:28:03.864134" level="INFO">Clicking element '//div[@id='logInModal']//button[@type='button'][normalize-space()='Close']'.</msg>
+<arg>${CLOSE-LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-24T20:28:03.863384" elapsed="0.053274"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-01-24T20:28:03.917017" elapsed="0.728179"/>
+</kw>
+<tag>negativeCases</tag>
+<status status="PASS" start="2024-01-24T20:27:51.759325" elapsed="12.885975"/>
+</test>
+<status status="PASS" start="2024-01-24T20:27:24.312863" elapsed="40.332655"/>
+</suite>
+<status status="PASS" start="2024-01-24T20:26:30.642154" elapsed="94.003636"/>
+</suite>
+<statistics>
+<total>
+<stat pass="9" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="4" fail="0" skip="0">negativeCases</stat>
+<stat pass="5" fail="0" skip="0">positiveCases</stat>
+</tag>
+<suite>
+<stat pass="9" fail="0" skip="0" id="s1" name="AddDeleteProductTests &amp; ConfirmOrderTests &amp; LoginTests">AddDeleteProductTests &amp; ConfirmOrderTests &amp; LoginTests</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1" name="AddDeleteProductTests">AddDeleteProductTests &amp; ConfirmOrderTests &amp; LoginTests.AddDeleteProductTests</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s2" name="ConfirmOrderTests">AddDeleteProductTests &amp; ConfirmOrderTests &amp; LoginTests.ConfirmOrderTests</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s3" name="LoginTests">AddDeleteProductTests &amp; ConfirmOrderTests &amp; LoginTests.LoginTests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
